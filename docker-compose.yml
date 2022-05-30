@@ -1,4 +1,4 @@
-version: '3.8'
+version: "3.8"
 
 services:
   mongo-database:
@@ -18,11 +18,11 @@ services:
       - "8080:8080"
     depends_on:
       - mongo-database
-  
+
   prometheus:
     image: prom/prometheus
     volumes:
-      - ./products/src/main/resources/:/etc/prometheus/
+      - ./:/etc/prometheus/
     command:
       - "--config.file=/etc/prometheus/prometheus.yml"
     ports:
