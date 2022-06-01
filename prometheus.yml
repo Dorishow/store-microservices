@@ -12,3 +12,15 @@ scrape_configs:
     metrics_path: /actuator/prometheus
     static_configs:
       - targets: ["host.docker.internal:8080"]
+
+  - job_name: "observe-users-api"
+    scrape_interval: 5s
+    metrics_path: /actuator/prometheus
+    static_configs:
+      - targets: ["host.docker.internal:8081"]
+
+remote_write:
+- url: <Your Metrics instance remote_write endpoint>
+  basic_auth:
+    username: <Your Metrics instance ID>
+    password: <Your Grafana.com API Key>
