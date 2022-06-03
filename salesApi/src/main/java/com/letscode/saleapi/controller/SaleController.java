@@ -59,7 +59,7 @@ public class SaleController {
         return removeProductService.execute(productRequest);
     }
 
-    @PutMapping("addCep")
+    @PutMapping("/addCep")
     public Mono<Cart> setCep(@RequestBody CepRequest cepRequest){
         return cepService.addCep(cepRequest);
     }
