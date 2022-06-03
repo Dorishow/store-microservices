@@ -36,7 +36,7 @@ public class AddProductService {
 
     public Cart verifyUser(Cart cart, String userId){
         if (!cart.getUserId().equalsIgnoreCase(userId)){
-            throw new BusinessException("O id do usuairo passado não corresponde ao id do usuário do carrinho");
+            throw new BusinessException("O id do usuario passado não corresponde ao id do usuário do carrinho");
         }
         return cart;
     }
